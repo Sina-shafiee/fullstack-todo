@@ -2,7 +2,8 @@ import axios from 'axios';
 import { Todo, TodoFormData } from '../types/Todo';
 
 const todoApi = axios.create({
-  baseURL: 'http://localhost:5000/'
+  // baseURL: 'http://localhost:5000/'
+  baseURL: 'https://fullstack-todo-backend.vercel.app/'
 });
 
 export const getTodos = async (): Promise<Todo[]> => {
