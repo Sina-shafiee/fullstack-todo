@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { deleteTodo, getTodos } from '../../api/todoApi';
 import { Todo } from '../../types/Todo';
 import { formatDate } from '../../utils/formatData';
+import { pause } from '../../utils/pause';
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
@@ -94,6 +95,7 @@ const TodoList = () => {
                     <button
                       onClick={async () => {
                         await deleteTodo(id);
+                        await pause(1000);
                         getTodos();
                       }}
                       className='font-medium text-blue-500 hover:underline'
